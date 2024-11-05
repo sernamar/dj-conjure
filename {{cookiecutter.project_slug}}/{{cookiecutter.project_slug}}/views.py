@@ -1,5 +1,4 @@
 import datetime
-import io
 from typing import Final
 
 from django.conf import settings
