@@ -1,5 +1,5 @@
 site_domain := "localhost:8000"
-site_name := "{{ cookiecutter.project_name.replace(' ', '\\ ') }}"
+site_name := "{{ cookiecutter.project_name.replace(' ', '\\\\ ') }}"
 
 admin_username := "admin"
 admin_email := "admin@localhost"
