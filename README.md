@@ -4,13 +4,14 @@ Cookiecutter for generating an opinionated Django project.
 
 ```bash
 pip install cookiecutter
-cookiecutter github.com/danjac/dj-conjure
+cookiecutter https://github.com/danjac/dj-conjure
 ```
 
 ## Features
 
-* HTMX
-* TailwindCSS
-* AlpineJS
-* Django Cotton
+* [HTMX](https://htmx.org/)
+* [TailwindCSS](https://tailwindcss.com/)
+* [AlpineJS](https://alpinejs.dev/)
+* [Django Cotton](https://django-cotton.com/)
+* [Django Template Partials](https://github.com/carltongibson/django-template-partials)
 
