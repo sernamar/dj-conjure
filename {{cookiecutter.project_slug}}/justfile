@@ -1,10 +1,10 @@
-site_domain := "localhost:8000"
-site_name := "{{ cookiecutter.project_name }}"
+export site_domain := "localhost:8000"
+export site_name := "{{ cookiecutter.project_name }}"
 
-admin_username := "admin"
-admin_email := "admin@localhost"
+export admin_username := "admin"
+export admin_email := "admin@localhost"
 
-db_volume := "{{ cookiecutter.project_slug }}_pg_data"
+export db_volume := "{{ cookiecutter.project_slug }}_pg_data"
 
 {% raw -%}
 @_default:
