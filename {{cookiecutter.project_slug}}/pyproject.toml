@@ -14,7 +14,6 @@ dependencies = [
     "django-cotton>=1.1.1",
     "django-csp>=3.8",
     "django-extensions>=3.2.3",
-    "django-fast-update>=0.2.3",
     "django-health-check>=3.18.3",
     "django-htmx>=1.19.0",
     "django-linear-migrations>=2.13.0",
