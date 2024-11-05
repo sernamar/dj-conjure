@@ -7,7 +7,6 @@
     "email": "{{ cookiecutter.author_name.lower() | trim() |replace(' ', '-') }}@{{ cookiecutter.domain_name.lower() | trim() }}",
     "version": "0.1.0",
     "license": "MIT",
-    "timezone": "UTC",
     "_copy_without_render": [
         "*.js",
         "*.css",
