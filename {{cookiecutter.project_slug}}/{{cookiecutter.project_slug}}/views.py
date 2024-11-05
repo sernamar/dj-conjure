@@ -41,12 +41,6 @@ def about(request: HttpRequest) -> HttpResponse:
     )
 
 
-@require_safe
-def privacy(request: HttpRequest) -> HttpResponse:
-    """Renders Privacy page."""
-    return render(request, "privacy.html")
-
-
 @require_POST
 def accept_gdpr_cookies(_) -> HttpResponse:
     """Handles "accept" action on GDPR cookie banner."""
