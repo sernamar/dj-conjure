@@ -1,0 +1,10 @@
+name: {{ cookiecutter.project_name }}_default
+on:
+    pull_request:
+    push:
+        branches:
+            - main
+run-name: ${{ github.actor }} is running checks
+jobs:
+    run_checks:
+        uses: ./.github/workflows/checks.yml
