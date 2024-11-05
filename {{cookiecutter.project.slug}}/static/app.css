@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ALPINEJS */
+
+[x-cloak] {
+    display: none !important;
+}
+
+/* HTMX */
+#hx-indicator {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: #0076ff;
+    z-index: 9999;
+    transition:
+    width 300ms ease-out,
+    opacity 150ms 150ms ease-in;
+    transform: translate3d(0, 0, 0);
+}
+
+#hx-indicator.htmx-request {
+    display: block !important;
+}
+
+@layer components {
+    /* FORMS */
+
+    .form-control:not(.is-checkbox) input {
+        background-color: inherit;
+        color: inherit;
+        font-size: inherit;
+        padding: theme("spacing.1");
+        width: theme("width.64");
+        border-radius: 0.25rem;
+    }
+
+    .has-errors input {
+        border: solid theme("borderWidth.DEFAULT") theme("borderColor.red.800");
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .has-errors input {
+            border: solid theme("borderWidth.DEFAULT")
+                    theme("borderColor.red.500");
+        }
+    }
+
+    /* search inputs */
+
+    input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration {
+        display: none;
+    }
+}
+
+@layer utilities {
+    /* BORDERS */
+
+    @media (prefers-color-scheme: dark) {
+        hr,
+        .divide-x > * + *,
+        .divide-y > * + *,
+        .border,
+        .border-t,
+        .border-l,
+        .border-r,
+        .border-b {
+            border-color: theme("colors.gray.600");
+        }
+    }
+}

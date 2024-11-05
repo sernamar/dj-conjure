@@ -11,9 +11,6 @@ dependencies = [
     "cookiecutter>=2.6.0",
 ]
 
-[project.scripts]
-dj-conjure = "dj_conjure:main"
-
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
