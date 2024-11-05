@@ -12,7 +12,6 @@ urlpatterns = [
     path("account/", include("allauth.urls")),
     path("about/", views.about, name="about"),
     path("privacy/", views.privacy, name="privacy"),
-    path("covers/<int:size>/cover.webp", views.cover_image, name="cover_image"),
     path("robots.txt", views.robots, name="robots"),
     path("service-worker.js", views.service_worker, name="service_worker"),
     path("manifest.json", views.manifest, name="manifest"),
