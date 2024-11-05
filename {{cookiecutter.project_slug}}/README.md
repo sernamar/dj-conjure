@@ -1,0 +1,77 @@
+
+## Development
+
+{{ cookiecutter.project_name }} requires the following basic dependencies to get started:
+
+* Python 3.13
+* [uv](https://docs.astral.sh)
+
+**Note:** if you don't have the right version of Python you can use `uv python install 3.13.x`.
+
+For ease of local development a `docker-compose.yml` file is provided which includes Docker images:
+
+* PostgreSQL
+* Redis
+* [Mailpit](https://mailpit.axllent.org/) (for local email testing)
+
+You can use these images if you want, or use a local install of PostgreSQL or Redis.
+
+Current tested versions are PostgreSQL 16 and Redis 7.
+
+The [justfile](https://github.com/casey/just) has some convenient shortcuts for local development, including:
+
+* `just install`: download and install local dependencies
+* `just update`: update dependencies to latest available versions
+* `just clean`: remove all non-committed files and other artifacts
+* `just serve`: run the development server and Tailwind JIT compiler
+* `just shell`: open a shell in the development environment
+* `just test`: run unit tests
+* `just check`: run unit tests and linters
+
+The install command will also create a `.env` file with default settings for local development, if one does not already exist.
+
+## Stack
+
+The **Radiofeed** stack includes:
+
+* [Django](https://djangoproject.com)
+* [HTMX](https://htmx.org)
+* [AlpineJS](https://alpinejs.dev)
+* [Tailwind](https://tailwindcss.com)
+* [PostgreSQL](https://www.postgresql.org/)
+
+This stack was chosen for the following reasons:
+
+1. [Locality of behavior](https://htmx.org/essays/locality-of-behaviour/): the behavior of a unit of code should be obvious from looking at the code.
+2. **Performance**: reduce the burden on end-user devices and bandwidth rampant with heavy SPA frameworks
+3. **Batteries included**: using popular, well-supported open source tools such as Django and PostgreSQL with a large number of features to avoid reinventing the wheel
+
+## Deployment
+
+The following environment variables should be set in your production installation (changing _radiofeed.app_ for your domain).
+
+```
+ALLOWED_HOSTS=radiofeed.app
+DATABASE_URL=<database-url>
+REDIS_URL=<redis-url>
+ADMIN_URL=<admin-url>
+ADMINS=me@radiofeed.app
+EMAIL_HOST=mg.radiofeed.app
+MAILGUN_API_KEY=<mailgun_api_key>
+SECRET_KEY=<secret>
+SENTRY_URL=<sentry-url>
+```
+
+Some settings such as `DATABASE_URL` may be set automatically by certain PAAS providers such as Heroku. Consult your provider documentation as required.
+
+`EMAIL_HOST` should be set to your Mailgun sender domain along with `MAILGUN_API_KEY` if you are using Mailgun.
+
+You should ensure the `SECRET_KEY` is sufficiently random: run the `generate_secret_key` custom Django command to create a suitable random string.
+
+In some server configurations your load balancer (e.g. Nginx) may set the `strict-transport-security` headers by default. If not, you can set the environment variable `USE_HSTS=true`.
+
+In production it's also a good idea to set `ADMIN_URL` to something other than the default _admin/_. Make sure it ends in a forward slash, e.g. _some-random-path/_.
+
+A Dockerfile is provided for standard container deployments which should also work on Heroku or another PAAS.
+
+Once you have access to the Django Admin, you should configure the default Site instance with the correct production name and domain.
