@@ -21,6 +21,7 @@ db_volume := "{{ cookiecutter.project_slug }}_pg_data"
 
 # Install all Python dependencies
 @pyinstall:
+   uv lock
    uv sync --frozen --all-extras --no-install-project
 
 # Update all Python dependencies
