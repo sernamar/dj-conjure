@@ -1,11 +1,16 @@
 {
-  "project_name": "My Awesome Project",
-  "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
-  "description": "Behold My Awesome Project!",
-  "author_name": "Dan Jacob",
-  "email": "{{ cookiecutter.author_name.lower() | trim() |replace(' ', '-') }}@{{ cookiecutter.domain_name.lower() | trim() }}",
-  "version": "0.1.0",
-  "license": "MIT",
-  "username_type": ["username", "email"],
-  "timezone": "UTC",
+    "project_name": "My Awesome Project",
+    "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
+    "description": "Behold My Awesome Project!",
+    "author_name": "Dan Jacob",
+    "domain_name": "example.com",
+    "email": "{{ cookiecutter.author_name.lower() | trim() |replace(' ', '-') }}@{{ cookiecutter.domain_name.lower() | trim() }}",
+    "version": "0.1.0",
+    "license": "MIT",
+    "timezone": "UTC",
+    "_copy_without_render": [
+        "*.js",
+        "*.css",
+        "*.svg"
+    ]
 }
