@@ -1,4 +1,3 @@
-{% raw -%}
 /* {% load static %} */
 // This is the "Offline page" service worker
 
@@ -48,4 +47,3 @@ self.addEventListener("fetch", event => {
         );
     }
 });
-{%- endraw %}
