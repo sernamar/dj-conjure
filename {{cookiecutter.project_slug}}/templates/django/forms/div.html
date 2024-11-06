@@ -1,2 +1,5 @@
+{% raw -%}
 {{ errors }}
 {% for field, errors in fields %}{{ field.as_field_group }}{% endfor %}
+{%- endraw %}
+

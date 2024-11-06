@@ -1,5 +1,7 @@
+{% raw -%}
 {% if field.is_hidden %}
     {{ field }}
 {% else %}
     <c-form.field :field="field" />
 {% endif %}
+{%- endraw %}

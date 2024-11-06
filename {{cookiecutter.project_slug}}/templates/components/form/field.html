@@ -1,3 +1,4 @@
+{% raw -%}
 <c-vars field class="space-y-3 form-control"/>
 {% with widget_type=field.field.widget.input_type required=field.field.required %}
     <fieldset class="{{ class }} is-{{ widget_type }}{% if field.errors %} has-errors{% endif %}" {{ attrs }}>
@@ -11,3 +12,4 @@
         <c-form.hint :hint="field.help_text" />
     </fieldset>
 {% endwith %}
+{%- endraw %}

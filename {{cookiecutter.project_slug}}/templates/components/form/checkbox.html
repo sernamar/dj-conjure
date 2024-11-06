@@ -1,3 +1,4 @@
+{% raw -%}
 <c-vars field />
 <div class="flex items-center w-full space-x-3 font-semibold{% if field.errors %} text-red-800 dark:text-red-500{% endif %}">
     {{ field }}
@@ -6,3 +7,4 @@
         {% if not required %}(optional){% endif %}
     </label>
 </div>
+{%- endraw %}
