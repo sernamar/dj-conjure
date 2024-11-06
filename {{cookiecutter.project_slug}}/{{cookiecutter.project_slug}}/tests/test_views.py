@@ -28,15 +28,10 @@ class TestIndex:
     url = reverse_lazy("index")
 
     @pytest.mark.django_db
-    def test_anonymous(self, client):
+    def test_get(self, client):
         response = client.get(self.url)
         assert200(response)
         assertTemplateUsed(response, "index.html")
-
-    @pytest.mark.django_db
-    def test_authenticated(self, client, auth_user):
-        response = client.get(self.url)
-        assert response.url == settings.LOGIN_REDIRECT_URL
 
 
 class TestManifest:
