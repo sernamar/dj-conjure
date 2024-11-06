@@ -1,3 +1,4 @@
+{% raw -%}
 <c-vars id="accept-gdpr-cookies" />
 {% get_accept_cookies as accept_cookies %}
 {% if not accept_cookies %}
@@ -27,3 +28,4 @@
         </div>
     </div>
 {% endif %}
+{%- endraw %}
