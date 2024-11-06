@@ -284,7 +284,7 @@ LANGUAGE_CODE = "en"
 USE_TZ = True
 TIME_ZONE = "UTC"
 
-USE_I18N = False
+USE_I18N = True
 
 FORMAT_MODULE_PATH = ["config.formats"]
 
