@@ -11,6 +11,8 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("account/", include("allauth.urls")),
     path("about/", views.about, name="about"),
+    path("privacy/", views.privacy, name="privacy"),
+    path("accept-gdpr-cookies/", views.accept_gdpr_cookies, name="accept_gdpr_cookies"),
     path("robots.txt", views.robots, name="robots"),
     path("service-worker.js", views.service_worker, name="service_worker"),
     path("manifest.json", views.manifest, name="manifest"),
