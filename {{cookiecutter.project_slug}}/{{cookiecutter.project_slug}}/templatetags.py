@@ -8,7 +8,9 @@ from django.contrib.sites.models import Site
 from django.core.serializers.json import DjangoJSONEncoder
 from django.db.models import Model
 from django.shortcuts import resolve_url
+from django.template.context import RequestContext
 from django.utils.html import format_html
+
 
 from {{ cookiecutter.project_slug }}.manifest import get_theme_color
 
