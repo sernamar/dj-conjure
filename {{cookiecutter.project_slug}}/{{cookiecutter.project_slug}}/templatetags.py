@@ -52,3 +52,9 @@ def absolute_uri(url: Model | str | None = None, *url_args, **url_kwargs) -> str
     return f"{scheme}://{site.domain}{path}"
 
 
+@register.simple_tag(takes_context=True)
+def get_accept_cookies(context: RequestContext) -> bool:
+    """Returns True if user has accepted cookies."""
+    return settings.GDPR_COOKIE_NAME in context.request.COOKIES
+
+

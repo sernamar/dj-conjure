@@ -517,7 +517,10 @@ if env.bool("USE_DEBUG_TOOLBAR", default=False):
     # INTERNAL_IPS required for debug toolbar
     INTERNAL_IPS = env.list("INTERNAL_IPS", default=["127.0.0.1"])
 
-# Project settings
+# PROJECT SETTINGS
+
+# Cookie used to check user accepts cookies
+GDPR_COOKIE_NAME = "accept-cookies"
 
 
 # HTMX configuration
