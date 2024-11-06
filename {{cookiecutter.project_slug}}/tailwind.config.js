@@ -11,6 +11,13 @@ export default {
     },
     content: ["./templates/**/*.html"],
     safelist: [
+        "message-error",
+        "message-info",
+        "message-success",
+        "message-warning",
+        "btn-danger",
+        "btn-default",
+        "btn-primary",
     ],
     keyframes: true,
     variants: {

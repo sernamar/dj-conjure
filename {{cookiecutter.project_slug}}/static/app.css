@@ -58,6 +58,174 @@
     input[type="search"]::-webkit-search-results-decoration {
         display: none;
     }
+
+    /* BUTTONS */
+
+    .btn {
+        padding: theme("padding.1") theme("padding.2");
+        border-radius: theme("borderRadius.DEFAULT");
+        font-weight: theme("fontWeight.semibold");
+    }
+
+    .btn.focus {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+    }
+
+    .btn-primary {
+        color: theme("colors.white");
+        background-color: theme("colors.blue.800");
+        border: solid theme("borderWidth.DEFAULT") theme("colors.blue.800");
+    }
+
+    .btn-primary:hover {
+        background-color: theme("colors.blue.600");
+    }
+
+    .btn:disabled,
+    .btn:hover:disabled {
+        background-color: theme("colors.gray.600");
+        color: theme("colors.white");
+        border-color: theme("colors.gray.600");
+        cursor: not-allowed;
+    }
+
+    .btn-default {
+        color: theme("colors.white");
+        background-color: theme("colors.violet.800");
+        border: solid theme("borderWidth.DEFAULT") theme("colors.violet.800");
+    }
+
+    .btn-default:hover {
+        background-color: theme("colors.violet.600");
+    }
+
+    .btn-danger {
+        color: theme("colors.white");
+        background-color: theme("colors.red.800");
+    }
+
+    .btn-danger:hover {
+        background-color: theme("colors.red.600");
+    }
+
+    .btn-outline {
+        background-color: inherit;
+    }
+
+    .btn-primary.btn-outline {
+        color: theme("colors.blue.800");
+        border: solid theme("borderWidth.DEFAULT") theme("colors.blue.800");
+    }
+
+    .btn-primary.btn-outline:hover {
+        color: theme("colors.blue.600");
+        background-color: theme("colors.gray.100");
+        border-color: theme("colors.blue.800");
+    }
+
+    .btn-default.btn-outline {
+        color: theme("colors.gray.800");
+        border: solid theme("borderWidth.DEFAULT") theme("colors.gray.600");
+    }
+
+    .btn-default.btn-outline:hover {
+        color: theme("colors.purple.600");
+        background-color: theme("colors.gray.100");
+        border: solid theme("borderWidth.DEFAULT") theme("colors.violet.600");
+    }
+
+    .btn-danger.btn-outline {
+        color: theme("colors.red.800");
+        border: solid theme("borderWidth.DEFAULT") theme("colors.red.800");
+    }
+
+    .btn-danger.btn-outline:hover {
+        color: theme("colors.red.600");
+        background-color: theme("colors.gray.100");
+        border-color: theme("colors.red.800");
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .btn-primary.btn-outline,
+        .btn-default.btn-outline {
+            color: theme("colors.white");
+            border-color: theme("colors.gray.500");
+        }
+
+        .btn-danger.btn-outline {
+            color: theme("colors.red.500");
+            border-color: theme("colors.red.500");
+        }
+
+        .btn-primary.btn-outline:hover {
+            color: theme("colors.blue.300");
+            background-color: inherit;
+            border-color: theme("colors.blue.300");
+        }
+
+        .btn-default.btn-outline:hover {
+            color: theme("colors.purple.400");
+            background-color: inherit;
+            border-color: theme("colors.purple.300");
+        }
+
+        .btn-danger.btn-outline:hover {
+            color: theme("colors.red.500");
+            background-color: inherit;
+            border-color: theme("colors.red.500");
+        }
+    }
+
+    /* LINKS */
+
+    .form-control a,
+    .link {
+        font-weight: theme("fontWeight.semibold");
+        color: theme("colors.black");
+    }
+    .form-control a:active,
+    .form-control a:hover,
+    .link.active,
+    .link:hover {
+        color: theme("colors.blue.600");
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            color-scheme: dark;
+        }
+
+        .form-control a,
+        .link {
+            color: theme("colors.white");
+        }
+
+        .form-control a:active,
+        .form-control a:hover,
+        .link.active,
+        .link:hover {
+            color: theme("colors.blue.300");
+        }
+    }
+
+    /* MESSAGES */
+    .message-error {
+        background-color: theme("colors.red.600");
+    }
+
+    .message-info {
+        background-color: theme("colors.blue.600");
+    }
+
+    .message-success {
+        background-color: theme("colors.green.600");
+    }
+
+    .message-warning {
+        background-color: theme("colors.yellow.600");
+    }
+
 }
 
 @layer utilities {
