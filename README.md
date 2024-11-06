@@ -5,6 +5,9 @@ Cookiecutter for generating an opinionated Django project.
 ```bash
 pip install cookiecutter
 cookiecutter https://github.com/danjac/dj-conjure
+cd my-project
+git init
+just install
 ```
 
 ## Features
