@@ -65,10 +65,16 @@ def accept_gdpr_cookies(_) -> HttpResponse:
 @require_safe
 @_cache_control
 @_cache_page
-def favicon(_) -> FileResponse:
+def favicon(_) -> HttpResponse:
     """Generates favicon file."""
-    return FileResponse((settings.STATIC_SRC / "img" / "favicon.png").open("rb"))
-
+    return HttpResponse(
+        (
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">'
+            + '<text y=".9em" font-size="90">🦊</text>'
+            + "</svg>"
+        ),
+        content_type="image/svg+xml",
+    )
 
 @require_safe
 @_cache_control
