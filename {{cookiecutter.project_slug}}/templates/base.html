@@ -11,8 +11,10 @@
             </title>
             {% partialdef head inline=True %}
                 {% tailwind_css %}
-                <link rel="icon" type="image/png" href="{% static "img/wave-ico.png" %}">
+                {% comment %}
+                <link rel="icon" type="image/png" href="">
                 <link rel="apple-touch-icon" href="{% static "img/apple-touch-icon.png" %}">
+                {% endcomment %}
                 <link rel="manifest" href="{% url "manifest" %}">
                 <link rel="canonical" href="{{ request.build_absolute_uri }}">
                 {% htmx_config %}
@@ -23,10 +25,12 @@
                       content="width=device-width, initial-scale=1, viewport-fit=no">
                 <meta name="mobile-wep-app-capable" content="yes">
                 <meta name="apple-mobile-wep-app-capable" content="yes">
-                <meta name="copyright" content="Dan Jacob {% now "Y" %}">
+    {%- endraw %}
+                <meta name="copyright" content="{{ cookiecutter.author_name }} {% raw -%}{% now "Y" %}{%- endraw %}">
+    {% raw -%}
+                <meta name="description" content="{{ cookiecutter.description.replace('"', "'") }}">
+    {% raw -%}
                 <meta name="cache-control" content="no-cache">
-                <meta name="description" content="Podcast aggregator site">
-                <meta name="keywords" content="podcasts, rss, feeds">
                 <script defer src="{% static "vendor/alpine-3.14.3.min.js" %}"></script>
                 <script defer src="{% static "vendor/htmx-2.0.3.min.js" %}"></script>
             {% endpartialdef %}
