@@ -2,7 +2,7 @@
 {% load widget_tweaks %}
 <c-vars field class />
 {% with widget_type=field.field.widget.input_type %}
-    <fieldset class="space-y-3 {{ class }}" {{ attrs }}>
+    <fieldset class="space-y-3 form-control {{ class }}" {{ attrs }}>
         {% if slot %}
             {{ slot }}
         {% else %}
