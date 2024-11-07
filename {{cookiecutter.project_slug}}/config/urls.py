@@ -14,7 +14,6 @@ urlpatterns = [
     path("privacy/", views.privacy, name="privacy"),
     path("accept-gdpr-cookies/", views.accept_gdpr_cookies, name="accept_gdpr_cookies"),
     path("robots.txt", views.robots, name="robots"),
-    path("manifest.json", views.manifest, name="manifest"),
     path("favicon.ico", views.favicon, name="favicon"),
     path(".well-known/assetlinks.json", views.assetlinks, name="assetlinks"),
     path(".well-known/security.txt", views.security, name="security"),
