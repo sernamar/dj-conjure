@@ -533,30 +533,3 @@ HTMX_CONFIG = {
     "scrollIntoViewOnBoost": False,
     "useTemplateFragments": True,
 }
-
-# PWA configuration
-# https://docs.pwabuilder.com/#/builder/manifest
-# https://developer.chrome.com/docs/android/trusted-web-activity/android-for-web-devs#digital-asset-links
-
-PWA_CONFIG = {
-    "assetlinks": {
-        "package_name": env("PWA_PACKAGE_NAME", default="app.{{ cookiecutter.project_slug }}.twa"),
-        "sha256_fingerprints": env.list("PWA_SHA256_FINGERPRINTS", default=[]),
-    },
-    "manifest": {
-        "categories": env.list(
-            "PWA_CATEGORIES",
-            default=[
-                "books",
-                "education",
-                "entertainment",
-                "news",
-                "politics",
-                "sport",
-            ],
-        ),
-        "description": env("PWA_DESCRIPTION", default="{{ cookiecutter.description }}"),
-        "background_color": env("PWA_BACKGROUND_COLOR", default="#FFFFFF"),
-        "theme_color": env("PWA_THEME_COLOR", default="#26323C"),
-    },
-}
