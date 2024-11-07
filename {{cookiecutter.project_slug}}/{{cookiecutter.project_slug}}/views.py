@@ -2,12 +2,7 @@ import datetime
 from typing import Final
 
 from django.conf import settings
-from django.http import (
-    FileResponse,
-    HttpRequest,
-    HttpResponse,
-    JsonResponse,
-)
+from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 from django.utils import timezone
 from django.views.decorators.cache import cache_control, cache_page
@@ -104,5 +99,4 @@ def security(_) -> HttpResponse:
         ),
         content_type="text/plain",
     )
-
 
