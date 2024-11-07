@@ -12,7 +12,6 @@ from django.template.context import RequestContext
 from django.utils.html import format_html
 
 
-from {{ cookiecutter.project_slug }}.manifest import get_theme_color
 
 _SECONDS_IN_MINUTE: Final = 60
 _SECONDS_IN_HOUR: Final = 3600
@@ -27,12 +26,6 @@ def htmx_config() -> str:
         '<meta name="htmx-config" content="{}">',
         json.dumps(settings.HTMX_CONFIG, cls=DjangoJSONEncoder),
     )
-
-
-@register.simple_tag
-def theme_color() -> str:
-    """Returns the PWA configuration theme color meta tag."""
-    return format_html('<meta name="theme-color" content="{}">', get_theme_color())
 
 
 @register.simple_tag
