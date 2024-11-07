@@ -1,5 +1,4 @@
 import pytest
-from django.conf import settings
 from django.template.response import TemplateResponse
 from django.urls import reverse, reverse_lazy
 from pytest_django.asserts import assertTemplateUsed
@@ -32,27 +31,6 @@ class TestIndex:
         response = client.get(self.url)
         assert200(response)
         assertTemplateUsed(response, "index.html")
-
-
-class TestManifest:
-    @pytest.mark.django_db
-    def test_get(self, client):
-        response = client.get(reverse("manifest"))
-        assert200(response)
-
-
-class TestAssetlinks:
-    @pytest.mark.django_db
-    def test_get(self, client):
-        response = client.get(reverse("assetlinks"))
-        assert200(response)
-
-
-class TestServiceWorker:
-    @pytest.mark.django_db
-    def test_get(self, client):
-        response = client.get(reverse("service_worker"))
-        assert200(response)
 
 
 class TestFavicon:

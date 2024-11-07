@@ -15,7 +15,6 @@
                 <link rel="icon" type="image/png" href="">
                 <link rel="apple-touch-icon" href="{% static "img/apple-touch-icon.png" %}">
                 {% endcomment %}
-                <link rel="manifest" href="{% url "manifest" %}">
                 <link rel="canonical" href="{{ request.build_absolute_uri }}">
                 {% htmx_config %}
                 {% theme_color %}
@@ -23,8 +22,6 @@
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport"
                       content="width=device-width, initial-scale=1, viewport-fit=no">
-                <meta name="mobile-wep-app-capable" content="yes">
-                <meta name="apple-mobile-wep-app-capable" content="yes">
     {%- endraw %}
                 <meta name="copyright" content="{{ cookiecutter.author_name }} {% raw -%}{% now "Y" %}{%- endraw %}">
                 <meta name="description" content="{{ cookiecutter.description.replace('"', "'") }}">
@@ -60,11 +57,6 @@
             </div>
             {% partialdef scripts inline=True %}
                 {% django_htmx_script %}
-                <script>
-                    if (typeof navigator.serviceWorker !== 'undefined') {
-                        navigator.serviceWorker.register('{% url "service_worker" %}')
-                    }
-                </script>
             {% endpartialdef %}
         </body>
     </html>

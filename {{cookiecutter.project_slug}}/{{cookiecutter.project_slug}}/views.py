@@ -79,34 +79,6 @@ def favicon(_) -> HttpResponse:
 @require_safe
 @_cache_control
 @_cache_page
-def service_worker(request: HttpRequest) -> HttpResponse:
-    """PWA service worker."""
-    return render(
-        request,
-        "service_worker.js",
-        content_type="application/javascript",
-    )
-
-
-@require_safe
-@_cache_control
-@_cache_page
-def assetlinks(_) -> HttpResponse:
-    """PWA assetlinks"""
-    return JsonResponse(get_assetlinks(), safe=False)
-
-
-@require_safe
-@_cache_control
-@_cache_page
-def manifest(request: HttpRequest) -> HttpResponse:
-    """PWA manifest.json file."""
-    return JsonResponse(get_manifest(request))
-
-
-@require_safe
-@_cache_control
-@_cache_page
 def robots(_) -> HttpResponse:
     """Generates robots.txt file."""
     return HttpResponse(
