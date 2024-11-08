@@ -18,8 +18,8 @@
     background: #0076ff;
     z-index: 9999;
     transition:
-    width 300ms ease-out,
-    opacity 150ms 150ms ease-in;
+        width 300ms ease-out,
+        opacity 150ms 150ms ease-in;
     transform: translate3d(0, 0, 0);
 }
 
@@ -30,7 +30,10 @@
 @layer components {
     /* FORMS */
 
-    .form-input {
+    .form-input,
+    .form-select,
+    .form-multiselect,
+    .form-textarea {
         background: inherit;
         color: inherit;
         border-radius: theme("borderRadius.DEFAULT");
@@ -212,7 +215,6 @@
     .message-warning {
         background-color: theme("colors.yellow.600");
     }
-
 }
 
 @layer utilities {

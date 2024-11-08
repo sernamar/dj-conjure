@@ -38,7 +38,9 @@ export default {
             ]);
             addVariant("htmx-added", ["&.htmx-added", ".htmx-added &"]);
         }),
-        require("@tailwindcss/forms"),
+        require("@tailwindcss/forms", {
+            strategy: "class",
+        }),
         require("@tailwindcss/typography"),
     ],
     theme: {
