@@ -30,6 +30,7 @@ jobs:
                     **/uv.lock
                     **/pyproject.toml
             - run: uv python install 3.13.0
+            - run: uv lock
             - run: uv sync --frozen --all-extras --no-install-project
             - run: uv run pyright
             - run: uv run python ./manage.py validate_templates
